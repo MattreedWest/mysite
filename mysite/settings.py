@@ -25,7 +25,7 @@ SECRET_KEY = 'x0ud&*49f^@n)5p_@o^$*us6c(^=#41)sf(k#j4do+#q8@eb29'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["teramoly.pythonanywhere.com"]
+ALLOWED_HOSTS = ["teramoly.pythonanywhere.com", "127.0.0.1", "localhost"]
 
 
 # Application definition
