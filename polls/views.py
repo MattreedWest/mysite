@@ -5,18 +5,22 @@ from .models import Question, Choice
 
 # Create your views here.
 def index(request):
-    q_all = Question.objects.all()
-    res="<ol>"
-    for q in q_all:
-        res +="<li>%s</li>" % q.text
-    res += "</ol>"
+    questions = Question.objects.all()
+    
+    context = {
+        "questions" : questions
+    }
 
-    return HttpResponse(res)
+    return render(request, "polls/index.html",context)
 
 
 def detail(request, q_id):
-    res = "Question number %s." % q_id,
-    return HttpResponse(res)
+    question = Question.objects.get(pk=q_id)
+    context = {
+        "question" : question
+    }
+
+    return render(request, "polls/detail.html", context)
 
 def results(request, q_id):
     res = "Result for question number %s." % q_id,
